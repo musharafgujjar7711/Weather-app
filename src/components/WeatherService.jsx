@@ -3,7 +3,7 @@ import { DateTime } from "luxon";
 // Update the fetchWeatherData function
 const fetchWeatherData = async (city) => {
     const API_KEY = "68b9ebe8c6564a9e88c155416241610"; // WeatherAPI Key
-    const BASE_URL = "http://api.weatherapi.com/v1/";
+    const BASE_URL = "https://api.weatherapi.com/v1/";
 
     // Function to get formatted time in 12-hour format with AM/PM
     const convertSecondsToTime = (seconds) => {
