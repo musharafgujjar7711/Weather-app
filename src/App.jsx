@@ -44,9 +44,9 @@ function App() {
 
     return (
       <div>
-         {/* {loading && <Spinner/>}
-      <Navbar toggleNightMode={toggleNightMode} isNightMode={isNightMode} setQuery={setQuery} />
-     */}
+         {loading && <Spinner/>}
+      {/* <Navbar toggleNightMode={toggleNightMode} isNightMode={isNightMode} setQuery={setQuery} /> */}
+     
          { weather && (
               <>
                  
