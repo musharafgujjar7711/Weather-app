@@ -33,24 +33,30 @@ function App() {
 
     useEffect(() => {
         if (isNightMode) {
-            document.body.style.backgroundColor = "#000";
+            document.body.style.backgroundColor = "#0f172a";
             document.body.style.color = "#fff";
         } else {
-            document.body.style.backgroundColor = "#c084fc";
-            document.body.style.color = "#000";
+            document.body.style.background = "#94a3b8";
+
+            document.body.style.color = "#1E1E1E";
         }
     }, [isNightMode]);
 
     return (
       <div>
-         {loading && <Spinner/>}
+         {/* {loading && <Spinner/>}
       <Navbar toggleNightMode={toggleNightMode} isNightMode={isNightMode} setQuery={setQuery} />
-    
+     */}
          { weather && (
               <>
-                  <SearchandTime isNightMode={isNightMode} data={weather.dailyForecast[0]} loading={loading} setQuery={setQuery} weather={weather.current}  />
-                  <Temp isNightMode={isNightMode} weather={weather.current}  />
-                  <Sunset data={weather.dailyForecast[0]} />
+                 
+                
+                 <SearchandTime   toggleNightMode={toggleNightMode} isNightMode={isNightMode} data={weather.dailyForecast[0]} loading={loading} setQuery={setQuery} weather={weather.current}  />
+                 
+                
+                <Temp isNightMode={isNightMode} weather={weather.current}  />
+                
+                   <Sunset data={weather.dailyForecast[0]} />
                   <HourandDay title="3 hours to forecast" data={weather.hourlyForecast} />
                   <HourandDay title="Daily forecast" data={weather.dailyForecast} />
               </>
