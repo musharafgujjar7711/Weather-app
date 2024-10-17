@@ -4,7 +4,7 @@ import { TiMediaPlay } from 'react-icons/ti'
 import Spinner from './Spinner'
 import { FaMoon, FaSun } from 'react-icons/fa'
 
-function SearchandTime({weather:{location,country,weather,currentTime},setQuery,loading, isNightMode, toggleNightMode ,data:{weekday}}) {
+function SearchandTime({weather:{location,country,weather,currentTime,temp},setQuery,loading, isNightMode, toggleNightMode ,data:{weekday}}) {
     const[city,setCity]=useState("")
     const clicktoggle=()=>{
       if(city!="")setQuery({q:city})
@@ -23,7 +23,7 @@ function SearchandTime({weather:{location,country,weather,currentTime},setQuery,
             <div className=' flex items-center  justify-between py-5 px-5 md:gap-0 gap-6 rounded-xl shadow-2xl'>
           <div>
           <button onClick={toggleNightMode} className=" ">
-          {isNightMode ? <FaSun size={30} className='text-yellow-400' /> : <FaMoon size={30} className='text-black' />}
+          {isNightMode ? <FaSun size={30} className='text-yellow-400' /> : <FaMoon size={30} className='' />}
         </button>
           </div>
         
@@ -46,13 +46,16 @@ function SearchandTime({weather:{location,country,weather,currentTime},setQuery,
           
            
         </div>
-       <div className='shadow-2xl text-center mt-10 '>
-       <div className=' text-center font-poppins  mt-9 flex items-center justify-center gap-8'>
+       <div className='shadow-2xl shadow-slate-950 text-center py-3 px-3 mt-8 flex items-center flex-col gap-6'>
+       <div className=' text-center font-poppins  mt-9 flex items-center justify-center gap-8 '>
          <h2 className='text-4xl font-medium '>{location}-{country.slice(0,3)}</h2>
-         <p className=' text-blue-500 font-bold text-xl'>{weather}</p>
+       
+        
         </div> 
-       <div className=' text-center  font-poppins text-2xl lg:mt-20 mt-8 sm:mt-14 flex flex-col items-center md:flex-row md:justify-center'>
-       <b>{weekday}</b>-<span className='text-gray-900'>{currentTime}</span>
+        <b className=' text-8xl'>{temp.toFixed()}°C</b>
+        <p className=' text-blue-500 font-bold text-xl'>{weather}</p>
+       <div className=' text-center  font-poppins text-2xl mb-4 mt-10  sm:mt-14 flex flex-col items-center md:flex-row md:justify-center'>
+       <p>{weekday}</p>-<span className=''>{currentTime}</span>
         </div>
        </div>
     </div>

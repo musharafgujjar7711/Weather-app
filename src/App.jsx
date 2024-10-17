@@ -33,12 +33,12 @@ function App() {
 
     useEffect(() => {
         if (isNightMode) {
-            document.body.style.backgroundColor = "#0f172a";
-            document.body.style.color = "#fff";
-        } else {
-            document.body.style.background = "#94a3b8";
-
+            document.body.style.backgroundColor = "#94a3b8";
             document.body.style.color = "#1E1E1E";
+        } else {
+            document.body.style.background = "#0f172a";
+
+            document.body.style.color = "#fff";
         }
     }, [isNightMode]);
 
